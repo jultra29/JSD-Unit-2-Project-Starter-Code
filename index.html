@@ -18,6 +18,27 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <script id="articleTemplate" type="text/x-handlebars-template">
+          <article class="article clearfix" id="{{id}}">
+            <section class="featuredImage">
+              <img src="{{image}}" />
+            </section>
+            <section class="articleContent">
+              <a href="#"><h3>{{title}}</h3></a>
+              <h6>{{category}}</h6>
+            </section>
+            <section class="impressions">
+              {{impressions}}
+            </section>
+          </article>
+        </script>
+
+        <script id="modalTemplate" type="text/x-handlebars-template">
+          <h1>{{title}}</h1>
+          <p>{{content}}</p>
+          <a href="{{url}}" class="popUpAction" target="_blank">Read more from source</a>
+        </script>
+
         <header>
           <section class="container">
             <a href="#"><h1>Feedr</h1></a>
@@ -25,9 +46,9 @@
               <ul>
                 <li><a href="#">News Source: <span>Source Name</span></a>
                   <ul>
-                      <li><a href="#">Source 1</a></li>
-                      <li><a href="#">Source 2</a></li>
-                      <li><a href="#">Source 3</a></li>
+                      <li><a href="#" onclick="Feedr.showEspn()">ESPN</a></li>
+                      <li><a href="#" onclick="Feedr.showNyTimes()">NYTimes</a></li>
+                      <li><a href="#" onclick="Feedr.showReddit()">Reddit</a></li>
                   </ul>
                 </li>
               </ul>
@@ -42,70 +63,17 @@
         <div id="popUp" class="loader hidden">
           <a href="#" class="closePopUp">X</a>
           <div class="container">
-            <h1>Article title here</h1>
-            <p>
-              Article description/content here.
-            </p>
-            <a href="#" class="popUpAction" target="_blank">Read more from source</a>
+
           </div>
         </div>
         <section id="main" class="container">
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_1.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_2.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_2.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
-          <article class="article">
-            <section class="featuredImage">
-              <img src="images/article_placeholder_1.jpg" alt="" />
-            </section>
-            <section class="articleContent">
-                <a href="#"><h3>Test article title</h3></a>
-                <h6>Lifestyle</h6>
-            </section>
-            <section class="impressions">
-              526
-            </section>
-            <div class="clearfix"></div>
-          </article>
+
         </section>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js" type="text/javascript"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/config.js"></script>
         <script src="js/app.js"></script>
 
     </body>
